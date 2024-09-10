@@ -38,3 +38,8 @@ def update_inventory(inventory_id: int, inventory: schemas.InventoryCreate, db: 
 @app.delete("/inventories/{inventory_id}", response_model=schemas.Inventory)
 def delete_inventory(inventory_id: int, db: Session = Depends(get_db)):
     return crud.delete_inventory(db=db, inventory_id=inventory_id)
+
+# Entry point for running the microservice
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8002)

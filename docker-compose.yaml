@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  book_catalog:
+    build: ./book_catalog
+    ports:
+      - "8001:8001"
+    environment:
+      DATABASE_URL: postgresql://library_project_sit722_user:SmD7HpghUvtlyEjW3z5t7PSGBGHLBeO0@dpg-crf9fc2j1k6c73dj2od0-a.oregon-postgres.render.com/library_project_sit722
+
+  inventory_management:
+    build: ./inventory_management
+    ports:
+      - "8002:8002"
+    environment:
+      DATABASE_URL: postgresql://library_project_sit722_user:SmD7HpghUvtlyEjW3z5t7PSGBGHLBeO0@dpg-crf9fc2j1k6c73dj2od0-a.oregon-postgres.render.com/library_project_sit722

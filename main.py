@@ -1,6 +1,7 @@
 from fastapi import FastAPI
-from book_catalog.main import app as book_catalog_app
-from inventory_management.main import app as inventory_management_app
+#from book_catalog.main import app as book_catalog_app
+from book_catalog.app.main import app as book_catalog_app
+from inventory_management.app.main import app as inventory_management_app
 
 app = FastAPI()
 
